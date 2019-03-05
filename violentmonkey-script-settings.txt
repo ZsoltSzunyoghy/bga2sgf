@@ -1,0 +1,3 @@
+add the following to @include  
+
+https://*.boardgamearena.com/classicgo?table=*
