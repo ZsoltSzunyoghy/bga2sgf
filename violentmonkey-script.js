@@ -9,5 +9,5 @@
 
 window.onload = function(){
   var logs = document.getElementById('logs');
-  alert("logs element: " + logs.textContent);
+  alert("logs element inner text: " + logs.innerText);
 } 
