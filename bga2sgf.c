@@ -3,6 +3,7 @@
 #endif
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 
@@ -44,7 +45,7 @@ char maprow(char *row) {
 	return sgfrows[boardsize - index];
 }
 
-void main()
+int main()
 {
 	FILE *fp;
 	char str[1280];
