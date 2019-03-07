@@ -32,9 +32,16 @@ function createsgf(str){
       }
       output += "\nhandicap: " + h;
       
+      // find out who is black
       var words = lines[i].split(" ");
       black = words[12];
       output += "\nblack: " + black;
+      
+      //parse handicap stones
+      
+      //find out who is white from the previous line
+      white = lines[i-1].split(" ");
+      output += "\nwhite: " + white;
       
     } else if ((lines[i].includes("gains")) && (lines[i].includes("komi"))){
       output += "line:" + lines[i];
