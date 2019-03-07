@@ -14,6 +14,7 @@ function createsgf(str){
   
   var output = "";
   var moves = [];
+  var handicapstones = [];
   var lines = str.split("\n");
   for(var i in lines){
     
@@ -22,6 +23,7 @@ function createsgf(str){
         boardsize = 19;        
       }      
       output += "\nmove: " + lines[i];
+      moves.push(lines[i]);
       
     } else if (lines[i].includes("handicap")){
       // Handicap line looks like this:    
@@ -38,9 +40,13 @@ function createsgf(str){
       output += "\nblack: " + black;
       
       //parse handicap stones
+      output += "\nhandicap stones: " + words[13];
+      for (var i = 1; i <= handicap; i++){
+        output += words[13+i];
+      }
       
-      //find out who is white from the previous line
-      white = lines[i-1].split(" ");
+      //find out who is white from the previous move
+      white = (moves[moves.length - 1].split(" "))[0];
       output += "\nwhite: " + white;
       
     } else if ((lines[i].includes("gains")) && (lines[i].includes("komi"))){
