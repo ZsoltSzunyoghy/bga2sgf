@@ -114,8 +114,15 @@ function createsgf(str){
   
   // compose sgf header:
   sgf += "(;GM[1]FF[4]CA[UTF-8]AP[bga2sgf:1]ST[2]RU[Japanese]SZ[" + boardsize + "]"; 
+  
   if(handicap > 0){
-    sgf += "HA[" + handicap + "]AB"+handicapstones;
+    sgf += "HA[" + handicap + "]AB";
+    var a = handicapstones.split(/[(),.]+/);
+    // note: first array entry is empty because the string starts with a deliminator
+    //       consequently we start at second (index 1) entry
+    for(var i = 1; i<handicap*2;){
+      sgf += "[" + mapcol(a[i++]) + maprow(a[i++]) + "]";
+    }
   } else {
     sgf += "KM[" + komi + "]";    
   }
