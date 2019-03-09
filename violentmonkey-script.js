@@ -133,7 +133,12 @@ function createsgf(str){
   //output += "\nsgf:\n" + sgf + moves.reverse().map(function(e){
   var sgfmoves = moves.reverse().map(function(e){
     var words = e.split(/[(,)]/);
-    return mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
+    
+    if(e.includes("plays")) {
+      return mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
+    } else if(e.includes("passes")){
+      return mapplayer(words[0]) + "[]";
+    }
     //return words;
     
   });
