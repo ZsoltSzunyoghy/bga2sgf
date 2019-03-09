@@ -113,7 +113,8 @@ function createsgf(str){
   }
   
   // compose sgf header:
-  sgf += "(;GM[1]FF[4]CA[UTF-8]AP[bga2sgf:1]ST[2]RU[Japanese]SZ[" + boardsize + "]"; 
+  //sgf += "(;GM[1]FF[4]CA[UTF-8]AP[bga2sgf:1]ST[2]RU[Japanese]SZ[" + boardsize + "]"; 
+  sgf += "(;GM[1]FF[4]RU[Japanese]SZ[" + boardsize + "]"; 
   
   if(handicap > 0){
     sgf += "HA[" + handicap + "]AB";
