@@ -119,6 +119,8 @@ function createsgf(str){
       moves.push(lines[i]);
       
     } else if (lines[i].includes("wins") && lines[i].includes("score")){
+      //score line looks like this:
+      // "EricKuhn wins the game with a score of 108:19."
       wins = (lines[i].split(" "))[0];
       score = (lines[i].split(" "))[8];
     }
