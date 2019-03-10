@@ -13,9 +13,9 @@ var black, white, handicap = 0, komi = 0;
 
 function mapplayer(p){
   if(p.includes(white)){
-    return ";W";
+    return "W";
   } else if (p.includes(black)){
-    return ";B";
+    return "B";
   } else {
     return "PLAYERERROR";
   } 
@@ -40,6 +40,13 @@ function maprow(r){
   }
 }
 
+function mapscore(s){
+  var points =  s.split(/[.:]/);
+  var p1 = parseInt(points[0]);
+  var p2 = parseInt(points[1]);
+  return p1-p2;
+}
+
 
 function createsgf(str){
   
@@ -47,6 +54,7 @@ function createsgf(str){
   var output = "", sgf = "";
   var moves = [];
   var handicapstones = [];
+  var result = "", wins = "", score = "";
   var lines = str.split("\n");
   for(var i in lines){
     
@@ -109,6 +117,10 @@ function createsgf(str){
     } else if (lines[i].includes("passes")){       
       output += "\npass: " + lines[i];
       moves.push(lines[i]);
+      
+    } else if (lines[i].includes("wins") && lines[i].includes("score")){
+      wins = (lines[i].split(" "))[0];
+      score = (lines[i].split(" "))[8];
     }
   }
   
@@ -130,15 +142,19 @@ function createsgf(str){
   
   sgf += "PW["+white+"]PB["+black+"]";
   
+  if(wins !== ""){
+    sgf += "RE[" + mapplayer(wins) + "+" + mapscore(score) + "]";
+  }
+  
   
   //output += "\nsgf:\n" + sgf + moves.reverse().map(function(e){
   var sgfmoves = moves.reverse().map(function(e){
     var words = e.split(/[(,)]/);
     
     if(e.includes("plays")) {
-      return mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
+      return ";" + mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
     } else if(e.includes("passes")){
-      return mapplayer(words[0]) + "[]";
+      return ";" + mapplayer(words[0]) + "[]";
     }
     //return words;
     
