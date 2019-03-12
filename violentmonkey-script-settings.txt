@@ -1,3 +1,9 @@
 add the following to @include  
 
 https://*.boardgamearena.com/classicgo?table=*
+
+
+-----
+for closed games add to @include:
+
+https://*.boardgamearena.com/*gamereview?table=*
