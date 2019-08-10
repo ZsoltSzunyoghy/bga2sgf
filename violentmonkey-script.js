@@ -173,7 +173,7 @@ function createsgf(str){
 
 var input=document.createElement("input");
 input.type="button";
-input.value="show SGF";
+input.value="Show SGF!";
 input.onclick = showAlert;
 document.body.appendChild(input); 
  
