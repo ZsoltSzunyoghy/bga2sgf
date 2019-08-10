@@ -171,7 +171,14 @@ function createsgf(str){
   return sgf;
 }
 
-window.onload = function(){
+var input=document.createElement("input");
+input.type="button";
+input.value="show SGF";
+input.onclick = showAlert;
+document.body.appendChild(input); 
+ 
+
+function showAlert(){
   var logs = document.getElementById('logs');
   alert(createsgf(logs.innerText));
 } 
