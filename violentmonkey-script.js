@@ -175,6 +175,7 @@ var input=document.createElement("input");
 input.type="button";
 input.value="Show SGF!";
 input.onclick = showAlert;
+input.setAttribute("style", "font-size:18px;position:absolute;top:120px;left:40px;");
 document.body.appendChild(input); 
  
 
