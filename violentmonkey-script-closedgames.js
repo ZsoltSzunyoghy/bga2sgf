@@ -1,3 +1,4 @@
+
 // ==UserScript==
 // @name New Script 2
 // @namespace Violentmonkey Scripts
@@ -172,8 +173,15 @@ function createsgf2(str){
   return sgf;
 }
 
-window.onload = function(){
-  var logs = document.getElementById('gamelogs');  
-  //alert(logs.innerText);  
-  alert(createsgf2(logs.innerText));  
+var input=document.createElement("input");
+input.type="button";
+input.value="Show SGF!";
+input.onclick = showAlert;
+input.setAttribute("style", "font-size:18px;position:absolute;top:120px;left:40px;");
+document.body.appendChild(input); 
+ 
+
+function showAlert(){
+  var logs = document.getElementById('gamelogs'); 
+  alert(createsgf2(logs.innerText));
 } 
