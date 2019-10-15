@@ -20,6 +20,16 @@ function mapplayer(p){
   } 
 }
 
+function reverseplayer(p){
+  if(p.includes("B")){
+    return "W";
+  } else if (p.includes("W")){
+    return "B";
+  } else {
+    return "PLAYERERROR";
+  } 
+}
+
 // char *sgfrows = "abcdefghijklmnopqrstuvwxy";
 
 var sgfrows = "abcdefghijklmnopqrstuvwxy";
@@ -53,7 +63,7 @@ function createsgf2(str){
   var output = "", sgf = "";
   var moves = [];
   var handicapstones = [];
-  var result = "", wins = "", score = "";
+  var result = "", wins = "", score = "", resigned="";
   var lines = str.split("\n");
   
   lines = lines.reverse();
@@ -125,6 +135,10 @@ function createsgf2(str){
       // "EricKuhn wins the game with a score of 108:19."
       wins = (lines[i].split(" "))[0];
       score = (lines[i].split(" "))[8];
+    } else if (lines[i].includes("concedes")){
+      //resign line looks like this:
+      // "19832 concedes the game."
+      resigned = (lines[i].split(" "))[0];
     }
   }
   
@@ -148,6 +162,10 @@ function createsgf2(str){
   
   if(wins !== ""){
     sgf += "RE[" + mapplayer(wins) + "+" + mapscore(score) + "]";
+  }
+  
+  if(resigned !== ""){
+    sgf += "RE[" + reverseplayer(mapplayer(resigned)) + "+R]";
   }
   
   
