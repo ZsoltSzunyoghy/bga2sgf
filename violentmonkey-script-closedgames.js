@@ -11,6 +11,19 @@ var boardsize = 13;
 var black, white, handicap = 0, komi = 0;
 
 function mapplayer(p){
+  
+  // handle the case when first move is missing
+  // still komi, PW and PB has to be filled manually
+  if(black == undefined) {    
+    black = p.split(" ")[0];
+    alert("black empty, taken value:"+ black);
+  } else if ((white == undefined) ){
+    if(!p.includes(black)){
+       white = p.split(" ")[0];
+       alert("white empty, taken value:"+ white);       
+       }    
+  }
+  
   if(p.includes(white)){
     return "W";
   } else if (p.includes(black)){
