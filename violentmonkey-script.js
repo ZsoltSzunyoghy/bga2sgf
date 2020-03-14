@@ -12,6 +12,20 @@ var boardsize = 13;
 var black, white, handicap = 0, komi = 0;
 
 function mapplayer(p){
+  
+  
+  // handle the case when first move is missing
+  // still komi, PW and PB has to be filled manually
+  if(black == undefined) {    
+    black = p.split(" ")[0];
+    alert("black empty, taken value:"+ black);
+  } else if ((white == undefined) ){
+    if(!p.includes(black)){
+       white = p.split(" ")[0];
+       alert("white empty, taken value:"+ white);       
+       }    
+  }
+  
   if(p.includes(white)){
     return "W";
   } else if (p.includes(black)){
@@ -140,6 +154,20 @@ function createsgf(str){
     }
   }
   
+  
+  //output += "\nsgf:\n" + sgf + moves.reverse().map(function(e){
+  var sgfmoves = moves.reverse().map(function(e){
+    var words = e.split(/[(,)]/);
+    
+    if(e.includes("plays")) {
+      return ";" + mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
+    } else if(e.includes("passes")){
+      return ";" + mapplayer(words[0]) + "[]";
+    }
+    //return words;
+    
+  });
+  
   // compose sgf header:
   //sgf += "(;GM[1]FF[4]CA[UTF-8]AP[bga2sgf:1]ST[2]RU[Japanese]SZ[" + boardsize + "]"; 
   sgf += "(;GM[1]FF[4]RU[Japanese]SZ[" + boardsize + "]"; 
@@ -167,18 +195,6 @@ function createsgf(str){
   }
   
   
-  //output += "\nsgf:\n" + sgf + moves.reverse().map(function(e){
-  var sgfmoves = moves.reverse().map(function(e){
-    var words = e.split(/[(,)]/);
-    
-    if(e.includes("plays")) {
-      return ";" + mapplayer(words[0]) + "[" + mapcol(words[1]) + maprow(words[2]) + "]";
-    } else if(e.includes("passes")){
-      return ";" + mapplayer(words[0]) + "[]";
-    }
-    //return words;
-    
-  });
   
   for (var i in sgfmoves){
     sgf += sgfmoves[i];
