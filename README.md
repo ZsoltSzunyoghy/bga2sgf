@@ -1,7 +1,8 @@
 # bga2sgf
 
 # prerequisits
-This script needs Violentmonkey plugin in Firefox/Chrome
+This script needs Violentmonkey extension, please install it as explained here:
+https://violentmonkey.github.io/get-it/
 
 Your language is set to English in BGA
 
