@@ -2,6 +2,7 @@
 
 # prerequisits
 This script needs Violentmonkey plugin in Firefox/Chrome
+Your language is set to English in BGA
 
 # installation
 Copy and paste the respectiv script into Violentmonkey editor and set the @include according to violentmonkey-script-settings.txt
