@@ -23,9 +23,10 @@ Refresh the page if the button "Show SGF" did not appear.
 Press the "Show SGF" button and then copy and paste the shown SGF into a test file. You can use triple click inside the alert popup. I suggest using extention .sgf
 
 # known issues
-1. The script is extracting the SGF based on the logs so you can use it only on a page where the game log is visible in some format
-2. Both versions use the same button.
-3. The pushbutton appears also on other pages
+1. The script is extracting the SGF based on the logs so you can use it only on a page where the game log is visible in some format, e.g. replay page for the closed games
+2. BGA developers sometimes change the wording in the log panel and that breaks this script. Contact me in such a case do that I can adjust the script.
+3. Both versions use the same button.
+4. The pushbutton appears also on other pages
 
 
 # features to be implemented
