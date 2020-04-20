@@ -31,6 +31,8 @@ Press the "Show SGF" button and then copy and paste the shown SGF into a test fi
 
 
 # features to be implemented
-Construct the SGF file so that it can be directly downloaded using the pushbutton.
+Save with more meaningful filename
 
 Make one script from the two and choose automatically
+
+Enable the user to choose/confirm board size and ruleset
