@@ -18,9 +18,9 @@ Enable both scripts in Violentmonkey
 # how to use
 Open your go game on BGA.
 
-Refresh the page if the button "Show SGF" did not appear.
+Refresh the page if the button "Get SGF!" button did not appear.
 
-Press the "Show SGF" button and then copy and paste the shown SGF into a test file. You can use triple click inside the alert popup. I suggest using extention .sgf
+Press the "Get SGF!" button and save the SGF file with a meaningful name.
 
 # known issues
 1. The script is extracting the SGF based on the logs so you can use it only on a page where the game log is visible in some format, e.g. replay page for the closed games
