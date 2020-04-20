@@ -25,7 +25,7 @@ Press the "Show SGF" button and then copy and paste the shown SGF into a test fi
 # known issues
 1. The script is extracting the SGF based on the logs so you can use it only on a page where the game log is visible in some format, e.g. replay page for the closed games
 2. BGA developers sometimes change the wording in the log panel and that breaks this script. Contact me in such a case do that I can adjust the script.
-3. Both versions use the same button.
+3. Since log does not contain the board size, the script will assume 13x13 board until somebody plays in column "O"
 4. The pushbutton appears also on other pages
 
 
