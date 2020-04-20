@@ -22,6 +22,8 @@ Refresh the page if the button "Get SGF!" button did not appear.
 
 Press the "Get SGF!" button and save the SGF file with a meaningful name.
 
+If you want to export the SGF for an already closed and archived game, choose the reply functionality in BGA and press the "Get SGF for closed game!" button before choosing the player for the replay. 
+
 # known issues
 1. The script is extracting the SGF based on the logs so you can use it only on a page where the game log is visible in some format, e.g. replay page for the closed games
 2. BGA developers sometimes change the wording in the log panel and that breaks this script. Contact me in such a case do that I can adjust the script.
