@@ -201,9 +201,20 @@ function createsgf(str){
   return sgf;
 }
 
+function downloadfile(filename, content){
+  var element = document.createElement('a');
+  element.style.display = 'none';
+  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(content));
+  element.setAttribute('download',filename);
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}
+
+//create button using style
 var input=document.createElement("input");
 input.type="button";
-input.value="Show SGF!";
+input.value="Get SGF!";
 input.onclick = showAlert;
 input.setAttribute("style", "font-size:18px;position:absolute;top:120px;left:40px;");
 document.body.appendChild(input); 
@@ -211,5 +222,6 @@ document.body.appendChild(input);
 
 function showAlert(){
   var logs = document.getElementById('logs');
-  alert(createsgf(logs.innerText));
+  //alert(createsgf(logs.innerText));
+  downloadfile('game.sgf',createsgf(logs.innerText));
 } 
