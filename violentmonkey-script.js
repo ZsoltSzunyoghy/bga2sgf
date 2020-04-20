@@ -98,13 +98,13 @@ function createsgf(str){
       
       // find out who is black
       var words = lines[i].split(" ");
-      black = words[12];
+      black = words[11];
       output += "\nblack: " + black;
       
       //parse handicap stones
-      handicapstones += words[13];
+      handicapstones += words[12];
       for (var i = 1; i <= handicap; i++){
-        handicapstones += words[13+i];
+        handicapstones += words[12+i];
       }
       output += "\nhandicap stones: " + handicapstones;
       
