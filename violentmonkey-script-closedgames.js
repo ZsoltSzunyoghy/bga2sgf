@@ -84,7 +84,7 @@ function createsgf2(str){
   for(var i in lines){
     
     if (lines[i].includes("plays")){  
-      if (lines[i].includes("plays (O")){  
+      if (lines[i].includes("plays  (O")){  
         boardsize = 19;        
       }      
       output += "\nmove: " + lines[i];
