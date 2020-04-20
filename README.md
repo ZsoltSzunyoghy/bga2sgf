@@ -27,7 +27,7 @@ Press the "Show SGF" button and then copy and paste the shown SGF into a test fi
 2. BGA developers sometimes change the wording in the log panel and that breaks this script. Contact me in such a case do that I can adjust the script.
 3. Since log does not contain the board size, the script will assume 13x13 board until somebody plays in column "O"
 4. Since the log does not contain the ruleset, the script will assume Japanese rules.
-5. The pushbutton appears also on other pages 
+5. The pushbutton appears also on other pages. Workaround: you can switch on/off the script easily in Violentmonkey and refresh the page.
 
 
 # features to be implemented
